@@ -11,16 +11,19 @@ function Movie({ movie }) {
 
   return (
     <div className="movie">
-      <img src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`} alt='poster' ></img>
+      <img
+        src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`}
+        alt="poster"
+      ></img>
+      <div className="movie-overview">
+        <h4>Overview:</h4>
+        <p>{movie.overview}</p>
+      </div>
       <div className="movie-info">
         <h3>{movie.title}</h3>
         <span className={setVoteClass(movie.vote_average)}>
           {movie.vote_average}
         </span>
-      </div>
-      <div className="movie-overview">
-        <h4>Overview:</h4>
-        <p>{movie.overview}</p>
       </div>
     </div>
   );

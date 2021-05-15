@@ -1,9 +1,31 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#root {
+  background-color: #6d28d9;
+  height: 100vh;
+}
+
+.app {
+  background-color: #6d28d9;
+}
+
 .header {
-  height: 3rem;
   background-color: #7c3aed;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  height: 10vh;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1;
+}
+
+.header h3 {
+  margin-left: 2rem;
+  cursor: pointer;
 }
 
 .search-box {
@@ -28,7 +50,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #6d28d9;
+  padding-top: 13vh;
+}
+
+.movies::-webkit-scrollbar {
+  display: none;
 }
 
 .movie {
@@ -71,7 +97,7 @@
   right: 0;
   border-radius: 5px;
   overflow: auto;
-  max-height: 100%;
+  max-height: 90%;
   transform: translateY(101%);
   transition: all 0.5s ease-in-out;
 }
@@ -103,3 +129,32 @@
 .green {
   color: rgb(5, 202, 5) !important;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  box-sizing: border-box;
+}
+
+.pagination p {
+  margin: 0 10px;
+}
+
+.btn {
+  background-color: #4267b2;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  color: white;
+}
+
+/* .visit-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0.5rem;
+} */
+
