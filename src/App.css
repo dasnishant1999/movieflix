@@ -1,18 +1,23 @@
+:root {
+  --primary: #4c1d95;
+  --secondary:#7C3AED;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
 
 #root {
-  background-color: #6d28d9;
+  background-color: var(--primary);
   height: 100vh;
 }
 
 .app {
-  background-color: #6d28d9;
+  background-color: var(--primary);
 }
 
 .header {
-  background-color: #7c3aed;
+  background-color: #6D28D9;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +26,8 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
   position: fixed;
   z-index: 1;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .header h3 {
@@ -29,13 +36,13 @@ body::-webkit-scrollbar {
 }
 
 .search-box {
-  background-color: #6d28d9;
+  background-color: var(--primary);
   color: white;
   border-radius: 1rem;
-  border: 1px solid #6d28d9;
+  border: none;
   margin: 0 2rem;
   padding: 0.5rem 1rem;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .search-box:focus {
@@ -51,7 +58,7 @@ body::-webkit-scrollbar {
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 13vh;
-  background-color: #6d28d9;
+  background-color: var(--primary);
 }
 
 .movies::-webkit-scrollbar {
@@ -61,7 +68,7 @@ body::-webkit-scrollbar {
 .movie {
   width: 250px;
   margin: 1rem;
-  background-color: #7c3aed;
+  background-color: var(--secondary);
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -84,7 +91,7 @@ body::-webkit-scrollbar {
 
 .movie-info span {
   padding: 0.5rem;
-  background-color: #6d28d9;
+  background-color: var(--primary);
   color: white;
   font-weight: bold;
   border-radius: 5px;
@@ -103,7 +110,7 @@ body::-webkit-scrollbar {
   transition: all 0.5s ease-in-out;
 }
 
-.movie-overview::-webkit-scrollbar{
+.movie-overview::-webkit-scrollbar {
   display: none;
 }
 
@@ -163,36 +170,35 @@ body::-webkit-scrollbar {
   margin: 0.5rem;
 }
 
-.banner-img{
+.banner-img {
   position: relative;
   height: 80vh;
 }
 
-.poster-img{
+.poster-img {
   width: 300px;
   position: absolute;
-  top:1rem;
+  top: 1rem;
   left: 3rem;
   border: 1px solid white;
 }
 
-.banner-content{
+.banner-content {
   position: absolute;
   top: 3rem;
-  left:calc(5rem + 300px);
+  left: calc(5rem + 300px);
   color: white;
 }
 
-.movieDetail{
-  background-color: #6d28d9;
-
+.movieDetail {
+  background-color: var(--primary);
 }
 
-.more-movie-details{
+.more-movie-details {
   color: white;
   padding: 1rem;
 }
 
-.more-movie-details p{
+.more-movie-details p {
   font-size: 22px;
 }

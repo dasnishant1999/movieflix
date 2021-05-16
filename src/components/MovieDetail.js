@@ -28,7 +28,7 @@ function MovieDetail() {
             style={{
               backgroundSize: "cover",
               backgroundImage: `url(http://image.tmdb.org/t/p/original/${movieDetail.backdrop_path})`,
-              backgroundPosition: "center center",
+              backgroundPosition: "center",
             }}
           >
             <img
