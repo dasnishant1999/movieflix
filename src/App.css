@@ -51,6 +51,7 @@ body::-webkit-scrollbar {
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 13vh;
+  background-color: #6d28d9;
 }
 
 .movies::-webkit-scrollbar {
@@ -102,6 +103,10 @@ body::-webkit-scrollbar {
   transition: all 0.5s ease-in-out;
 }
 
+.movie-overview::-webkit-scrollbar{
+  display: none;
+}
+
 .movie:hover .movie-overview {
   transform: translateY(0%);
 }
@@ -144,17 +149,50 @@ body::-webkit-scrollbar {
 
 .btn {
   background-color: #4267b2;
-  padding: 5px 10px;
+  padding: 8px 10px;
   border-radius: 5px;
   cursor: pointer;
   border: none;
   color: white;
 }
 
-/* .visit-btn {
+.visit-btn {
   position: absolute;
   top: 0;
   left: 0;
   margin: 0.5rem;
-} */
+}
 
+.banner-img{
+  position: relative;
+  height: 80vh;
+}
+
+.poster-img{
+  width: 300px;
+  position: absolute;
+  top:1rem;
+  left: 3rem;
+  border: 1px solid white;
+}
+
+.banner-content{
+  position: absolute;
+  top: 3rem;
+  left:calc(5rem + 300px);
+  color: white;
+}
+
+.movieDetail{
+  background-color: #6d28d9;
+
+}
+
+.more-movie-details{
+  color: white;
+  padding: 1rem;
+}
+
+.more-movie-details p{
+  font-size: 22px;
+}

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { SEARCHAPI } from "../API_PATH";
 
 function Header({ setmovies, showPage, setshowPage }) {
   const [searchText, setsearchText] = useState("");
+
+  const history = useHistory();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -16,6 +18,7 @@ function Header({ setmovies, showPage, setshowPage }) {
         setmovies(data.results);
         setshowPage(false);
         console.log(data);
+        history.push("/search");
       });
   };
 
