@@ -34,11 +34,15 @@ function App() {
             />
           </div>
         </Route>
-        <Route path='/movie/:id' >
-        <MovieDetail />
+        <Route path="/movie/:id">
+          <MovieDetail />
         </Route>
-        <Route path="/search">
-          <SearchPage movies={movies}></SearchPage>
+        <Route path="/search/:query">
+          <SearchPage
+            movies={movies}
+            setmovies={setmovies}
+            setshowPage={setshowPage}
+          ></SearchPage>
         </Route>
       </Switch>
     </Router>

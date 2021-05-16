@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { SEARCHAPI } from "../API_PATH";
 
 function Header({ setmovies, showPage, setshowPage }) {
   const [searchText, setsearchText] = useState("");
@@ -12,14 +11,8 @@ function Header({ setmovies, showPage, setshowPage }) {
     if (searchText.trim() === "") {
       return alert("Please enter valid movie");
     }
-    fetch(SEARCHAPI + searchText)
-      .then((response) => response.json())
-      .then((data) => {
-        setmovies(data.results);
-        setshowPage(false);
-        console.log(data);
-        history.push("/search");
-      });
+    setmovies();
+    history.push(`/search/${searchText}`);
   };
 
   const handleChange = (e) => {
