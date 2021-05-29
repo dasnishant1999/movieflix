@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import Movie from "./Movie";
 import { APIURL } from "../API_PATH";
+import { AppContext } from "../AppContext";
 
+function Movies() {
+  const { movies, setmovies, pageNo, setpageNo, showPage, setshowPage } =
+    useContext(AppContext);
 
-function Movies({
-  movies,
-  setmovies,
-  pageNo,
-  setpageNo,
-  showPage,
-  setshowPage,
-}) {
   useEffect(() => {
     fetch(APIURL + pageNo)
       .then((response) => response.json())
@@ -20,7 +16,7 @@ function Movies({
         setshowPage(true);
       });
     return () => {};
-  }, [pageNo]);
+  }, [pageNo, setmovies, setshowPage]);
 
   const nextButtonHandler = () => {
     if (pageNo <= 500) {
@@ -35,7 +31,6 @@ function Movies({
       window.scrollTo(0, 0);
     }
   };
-
 
   return (
     <>

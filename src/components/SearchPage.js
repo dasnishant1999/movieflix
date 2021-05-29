@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import Movie from "./Movie";
 import { useParams } from "react-router-dom";
 import { SEARCHAPI } from "../API_PATH";
+import { AppContext } from "../AppContext";
 
-function SearchPage({ movies, setmovies, setshowPage }) {
+function SearchPage() {
+  const { movies, setmovies, setshowPage } = useContext(AppContext);
+
   const { query } = useParams();
-  console.log(query);
 
   useEffect(() => {
     fetch(SEARCHAPI + query)
@@ -17,7 +19,7 @@ function SearchPage({ movies, setmovies, setshowPage }) {
       });
 
     return () => {};
-  }, [query]);
+  }, [query, setmovies, setshowPage]);
 
   return (
     <div className="movies">

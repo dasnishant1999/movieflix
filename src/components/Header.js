@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { AppContext } from "../AppContext";
 
-function Header({ setmovies, showPage, setshowPage }) {
+function Header() {
   const [searchText, setsearchText] = useState("");
+
+  const {setmovies}  = useContext(AppContext);
 
   const history = useHistory();
 
